@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "serve:webpack": "webpack-dev-server --hot --inline --content-base ./src",
+    "serve:json": "json-server db.json",
+    "start": "concurrently \"yarn serve:webpack\" \"yarn serve:json\""
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-react": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "html-webpack-plugin": "^2.28.0",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "concurrently": "^3.4.0",
+    "json-server": "^0.9.6",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.flex-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+body {
+  background: #f9b41d;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.zip-form {
+  padding: 15px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
+  text-align: center;
+
+  label {
+    vertical-align: middle;
+  }
+
+  input {
+    margin: 0 10px;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  button {
+    padding: 7px 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+  }
+}
+
+.weather-list {
+  margin: 20px 0;
+}
+
+.weather-list-item {
+  min-width: 100px;
+  margin: 0 10px;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  & > h2 {
+    font-weight: normal;
+  }
+}
+
+.current-day {
+  box-sizing: border-box;
+  padding: 20px;
+  padding-top: 0;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.details {
+  justify-content: flex-start;
+
+  & > div {
+    padding-left: 20px;
+  }
+
+  & > div:first-child {
+    padding-left: 0;
+  }
+
+  .weather {
+    font-size: 30px;
+    line-height: 1.4;
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+  }
+}
