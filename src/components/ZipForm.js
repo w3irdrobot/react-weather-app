@@ -8,45 +8,39 @@ class ZipForm extends Component {
       zipcode: ''
     };
 
-    this.inputUpdated = this.inputUpdated.bind(this);
     this.submitZipCode = this.submitZipCode.bind(this);
   }
 
-  inputUpdated(e) {
-    const { value } = e.target;
-
-    this.setState({ zipcode: value });
-  }
-
   submitZipCode(e) {
-    e.preventDefault();
-
-    const { zipcode } = this.state;
     const { onSubmit } = this.props;
 
-    onSubmit(zipcode);
-
-    this.setState({ zipcode: '' });
+    onSubmit(e.target.value);
   }
 
   render() {
-    const { zipcode } = this.state;
-
     return (
       <div className="zip-form">
-        <form onSubmit={this.submitZipCode}>
+        <form>
           <label htmlFor="zipcode">Zip Code</label>
-          <input
-            className="form-control"
-            type="input"
-            name="zipcode"
-            value={zipcode}
-            onInput={this.inputUpdated}/>
-          <button type="submit" className='btn btn-success'>Get the forecast!!</button>
+          <select onChange={this.submitZipCode}>
+            <option value="">Select a zip</option>
+            {this.props.zips.map(zip =>
+              <option key={zip} value={zip}>{zip}</option>
+            )}
+          </select>
         </form>
       </div>
     );
   }
 }
+
+ZipForm.propTypes = {
+  zips: React.PropTypes.arrayOf(React.PropTypes.number).isRequired,
+  onSubmit: React.PropTypes.func
+};
+
+ZipForm.defaultProps = {
+  onSubmit: () => {}
+};
 
 export default ZipForm;
