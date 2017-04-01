@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introduction to React</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+					<section>
+						<h2>Introduction to React</h2>
+						<h3>By: Alex Sears</h3>
+						<p><i class="fa fa-twitter" aria-hidden="true"></i> searsaw<br><i class="fa fa-github" aria-hidden="true"></i> searsaw</p>
+					</section>
+
+					<section>
+						<section>
+							<h2>What is React?</h2>
+							<p>A JavaScript library for building user interfaces.</p>
+						</section>
+
+						<section>
+							<h2>What does that mean?</h2>
+							<p>It allows us to create interactive user interfaces in an easy to write and understand way.</p>
+							<p>React uses a virtual DOM to manage and batch changes to the actual DOM (more on this later).</p>
+						</section>
+
+						<section>
+							<p>We group pieces of our interface into components. These components can be composed of other components.</p>
+							<p>We then define how data is displayed based on the component's internal <strong>state</strong> and the <strong>props</strong> passed to it.</p>
+						</section>
+					</section>
+
+					<section>
+						<section>
+							<h1>Let's define some terms.</h1>
+						</section>
+
+						<section>
+							<h2>Component</h2>
+							<p>A piece of the UI managed by React. It has its own state that it manages internally and also has props that are passed into it.</p>
+							<p>This typically will directly represent markup in the browser.</p>
+						</section>
+
+						<section>
+							<h2>State</h2>
+							<p>Data saved directly on a component. No other component knows about this state, but this data can be passed to other components as props.</p>
+						</section>
+
+						<section>
+							<h2>Props</h2>
+							<p>Data passed to a component from its parent. We can use this data to respond to changes in state of the parent, among many other things.</p>
+						</section>
+
+						<section>
+							<h2>Virtual DOM</h2>
+							<p>An in-memory, JavaScript object representation of the DOM we see in the web browser.</p>
+							<p>When we change how a component looks through changes in data, we are actually changing what the calculated virtual DOM looks like. React will compare the new virtual DOM to the previous one it calculated and then update the DOM in the browser according to the differences in virtual DOM representations.</p>
+						</section>
+
+						<section>
+							<h2>JSX</h2>
+							<p>An HTML-like syntax for writing components.</p>
+							<p>React has a native API for creating components that is just calling a bunch of JavaScript functions. This works fine, but can become hairy when trying to maintain it.</p>
+							<p>With the power of Babel transpilation, we can write our components in JSX, which looks just like HTML. This makes reading and maintaining our components much easier.</p>
+						</section>
+					</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
