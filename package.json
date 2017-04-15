@@ -2,7 +2,9 @@
   "scripts": {
     "serve:webpack": "webpack-dev-server --hot --inline --content-base ./src",
     "serve:json": "json-server db.json",
-    "start": "concurrently \"yarn serve:webpack\" \"yarn serve:json\""
+    "serve": "concurrently \"yarn serve:webpack\" \"yarn serve:json\"",
+    "start": "node server.js",
+    "build": "webpack"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -20,6 +22,8 @@
   "dependencies": {
     "axios": "^0.15.3",
     "concurrently": "^3.4.0",
+    "express": "^4.15.2",
+    "helmet": "^3.5.0",
     "json-server": "^0.9.6",
     "prop-types": "^15.5.6",
     "react": "^15.5.3",
