@@ -4,7 +4,7 @@ import ZipForm from './ZipForm';
 import WeatherList from './WeatherList';
 import CurrentDay from './CurrentDay';
 
-const API_ENDPOINT = 'http://localhost:3000/weather';
+const API_ENDPOINT = 'https://react-weather-app-scotchio.herokuapp.com/weather';
 
 class App extends Component {
   constructor(props) {
