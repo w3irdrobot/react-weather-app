@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    get('http://localhost:3000/weather')
+    get(API_ENDPOINT)
       .then(({ data: weatherData }) => {
         this.setState({ weatherData });
       });
